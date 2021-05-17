@@ -4,7 +4,7 @@ from mytest import mymodule
 
 for N in [int(i*1000) for i in range(1,11)]:
     a = np.linspace(0, 2*np.pi, N)
-    k = 100
+    k = complex(100,1)
 
     start_time = time.time()
     M = mymodule.eikr(a,k,N)
