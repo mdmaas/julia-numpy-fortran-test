@@ -1,13 +1,15 @@
 import numpy as np
 import time
 
-for N in [int(i*1000) for i in range(1,11)]:
-    a = np.linspace(0, 2*np.pi, N)
+tests = np.arange(1, 11) * 1000
+timings = np.zeros(tests.size)
+for idx, N in enumerate(tests):
+    a = np.linspace(0, 2 * np.pi, N)
     k = 100
 
+    A = a[:, np.newaxis]
+
     start_time = time.time()
-    M = np.exp(1j*k*(np.tile(a,(N,1))**2 + np.tile(a.reshape(N,1),(1,N))**2))
-    print('N=' + str(N) + ', time in Numpy: ', str(time.time() - start_time) + " seconds")
-
-
-
+    M = np.exp(1j * k * np.sqrt(A ** 2 + A.T ** 2))
+    timings[idx] = time.time() - start_time
+print(timings)
