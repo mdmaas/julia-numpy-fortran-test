@@ -10,6 +10,7 @@ sh make.sh
 ./f_mkl
 sh run_julia.sh
 python3 test_f2py.py
+python3 test.py
 ```
 
 ### Download and install MKL:
