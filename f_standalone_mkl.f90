@@ -56,10 +56,10 @@ complex(real64) :: k
 complex(real64), allocatable :: m(:, :)
 real(real64) :: t1, t2
 do i = 1, 10
+   t1 = omp_get_wtime()
    n = 1000*i
    if(allocated(m)) deallocate(m)
    allocate(m(n, n))
-   t1 = omp_get_wtime()
    a = [(2*j*pi/(n - 1), j=0, n - 1)]
    k = cmplx(100.0, 1.0)
    call eikr(a, k, n, m)
