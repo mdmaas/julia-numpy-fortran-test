@@ -5,11 +5,11 @@ function eval_exp_tvectorize(N)
     A = Matrix{ComplexF64}(undef, N, N)
 
     _A = reinterpret(reshape, Float64, A)
-    @avs thread=true @tvectorize for j in 1:N, i in 1:N
+    @tvectorize for j in 1:N, i in 1:N
         x = sqrt(a[i]^2 + a[j]^2)
         prefac = exp(-x)
         s, c = sincos(100*x)
-        
+
         _A[1,i,j] = prefac * c
         _A[2,i,j] = prefac * s
     end
