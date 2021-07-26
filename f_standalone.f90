@@ -1,12 +1,5 @@
-module omp
-interface
-   double precision function omp_get_wtime()
-   endfunction
-endinterface
-endmodule
-
 program test
-use omp
+use omp_lib
 complex(kind=8), allocatable :: A(:, :)
 integer :: N
 real(kind=8) :: time1, time2
