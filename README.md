@@ -1,7 +1,7 @@
 # julia-numpy-fortran-test
 Comparing Julia vs Numpy vs Fortran for performance and code simplicity
 
-[Julia vs Numpy vs Fortran performance tests](https://www.matecdev.com/articles/numpy-julia-fortran.html).
+[Julia vs Numpy vs Fortran performance tests](https://www.matecdev.com/posts/numpy-julia-fortran.html).
 
 ## Usage
 ```
